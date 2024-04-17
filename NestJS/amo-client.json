@@ -1,7 +1,7 @@
 {   
-    "client_id":"f5eb61f5-6764-4420-a919-7c14fc829380",
-    "client_secret": "JKpIje68606JPRBj3pqFNFwmGUO7z93Pphp8yvf9jj4CmKfrrqn7wrXjeFG1Kp8E",
-    "redirect_uri": "https://localhost",
-    "username": "dmitrihdemo",
-    "code": "def50200762222106517428dc119a9134693adb555bba54d25320aa2f54beeb7b9c247318686ed71420daa50b86a4e0611eb58ce7b89279af4c15d4b7fd94a6f8a617886edec6cc472a5c79f4e1c8a4668b7197e2bca9608f1b6dcf8f4d3510ea6fbc1c741efb5891afc1d82ae09aa8a2f26fba88cc58ac52094fbe228ac2df57115bab03c7a413eec88fcd8853aa855af0cd204c18023296877aae7d0709060578f8e3fcbb80f771b96ed23702ec478f7f5c75bfad8aa35e0a569e58bef3baa045f01454fba86abfa37a312c0d05bf65caaf5dada18ba709a3c3d289d24e7cc9542ed89fac5cb376490953f8b08ceaccc0b00dbd0dcb013947de27e2ba6258f66e0eaef3f2b8ce7d7d9c28a9c127006b370a81238ead1278389060cead14a5f78ce52e0a8eabd3b6e2ba9bcf59eed5647eb04362b1604d509192dd1f3b98ad00223e065b942e85c72fe470df8005a9a89b0f62e9eae8682cd946fd270c03f2ca86d4c8493e946e4b3ac958e868f67598fbf64d561e0771e456ad675e943a90b6fdf11dd6a0b3233c00d5c34e202c75ab492579657bcc0b165e7b4071ea461e02c7023029fce03b9ae87f26e7ab605482b8ebcfadf48293756f3f8dcbddae6bd0ed423f993aa637960d15d6f0a57a4207a48cea22259add2546d13d40962010856dd"
+    "client_id":"client_id",
+    "client_secret": "client_secret",
+    "redirect_uri": "redirect_uri",
+    "username": "amo username from https://YourUserName.amocrm.ru",
+    "code": "auth_code"
 }
