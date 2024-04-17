@@ -2,10 +2,17 @@ import axios from "axios"
 import * as fs from 'fs'
 import { Injectable } from '@nestjs/common';
 
-import { client_id, client_secret, redirect_uri, username } from './amo-client.json'
-import { access_token } from './tokens.json'
+import { client_id, client_secret, redirect_uri, username } from 'amo-client.json'
+import {resolve} from "path";
 
-let acc_token = access_token;
+const myPath  = resolve(__dirname, "../../../tokens.json");
+const getToken = async () => {
+  const  { access_token } = await JSON.parse(fs.readFileSync(myPath, 'utf8'));
+  return access_token
+}
+
+
+let acc_token = getToken();
 interface Lead {
   id: number,
   name: string,
@@ -27,13 +34,6 @@ export class ApiService {
   async findAll(query?: string | null): Promise<{}> {
     return await leads(query)
   }
-
-  findOne(query: string) {
-    console.log('query' + query)
-    return `This action returns a #${query} api`;
-  }
-
-
 }
 
 
@@ -123,7 +123,7 @@ async function leads(quer: string) {
 
         answer.push(lead)
       }
-      // console.log(answer);
+      // console.log(answer); 
       return answer
     } catch (e) {
       if (e.response) {
@@ -140,7 +140,7 @@ async function leads(quer: string) {
 
 async function refrashTokens() {
   console.log('Ty refesh')
-  let content: { access_token: string, refresh_token: string } = await JSON.parse(fs.readFileSync(__dirname + '/tokens.json', 'utf8'));
+  let content: { access_token: string, refresh_token: string } = await JSON.parse(fs.readFileSync(myPath, 'utf8'));
 
   let new_data = await axios.post(
     `https://${username}.amocrm.ru/oauth2/access_token`,
@@ -163,9 +163,9 @@ async function refrashTokens() {
     refresh_token: new_data.data.refresh_token
   };
 
-  fs.writeFileSync(__dirname + '/tokens.json', JSON.stringify(content, null, 2));
+  fs.writeFileSync(myPath, JSON.stringify(content, null, 2));
 
-  let contentNew = await JSON.parse(fs.readFileSync(__dirname + '/tokens.json', 'utf8'));
+  let contentNew = await JSON.parse(fs.readFileSync(myPath, 'utf8'));
   
   acc_token = contentNew.access_token;
   console.log('refreshed')

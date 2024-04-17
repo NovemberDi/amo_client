@@ -20,6 +20,6 @@
     "resolveJsonModule":true
   },
   "exclude": [
-    "client/*",
+    "dist/*",
   ]
 }

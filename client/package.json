@@ -13,8 +13,10 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/lodash.debounce": "^4.0.9",
     "ant-design-vue": "^4.1.2",
     "axios": "^1.6.8",
+    "lodash.debounce": "^4.0.8",
     "vue": "^3.4.21"
   },
   "devDependencies": {

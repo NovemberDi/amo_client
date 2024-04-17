@@ -11,7 +11,7 @@ import { ApiModule } from './api/api.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../client/dist' ),
+      rootPath: join(__dirname, '../../../client/dist' ),
     }),
     ApiModule,
 

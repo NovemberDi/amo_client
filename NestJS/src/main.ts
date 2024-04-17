@@ -8,6 +8,13 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
   // app.use('/', express.static('test.html'));
   app.useStaticAssets(join(__dirname, './test.html', 'public'));
-  await app.listen(3000);
+  app.enableCors({
+    origin: [
+      'http://localhost:5173',
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  });
+  await app.listen(3052); 
 }
 bootstrap();
